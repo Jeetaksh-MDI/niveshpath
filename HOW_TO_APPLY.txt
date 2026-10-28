@@ -1,0 +1,9 @@
+NiveshPath quick update
+
+1. Extract this ZIP.
+2. In your existing GitHub niveshpath repository, use Add file > Upload files.
+3. Upload app.js, styles.css and sw.js to the repository ROOT (same folder as index.html).
+4. Commit directly to main. GitHub replaces files with identical names.
+5. Wait for the Pages deployment and hard refresh Ctrl+Shift+R.
+
+Team images are now embedded inside app.js and do not need any assets folder. Your existing index.html and curriculum.js should remain unchanged.
