@@ -20,3 +20,6 @@ html.big-text{--font-scale:1.16}html.high-contrast{--ink:#09232d;--muted:#3f5660
 .guide-tip-number{flex:0 0 31px;width:31px;height:31px;display:grid;place-items:center;border-radius:10px;color:#078d7c;background:#e6f5ef;font-weight:800}
 .guide-tip b{font-size:.9rem}.guide-tip p{color:var(--muted);font-size:.84rem;line-height:1.62;margin:5px 0 0}
 @media(max-width:720px){.lesson-meaning{grid-template-columns:1fr}.module-card{min-height:0}}
+
+/* GitHub Pages photograph reliability */
+.team-card img{display:block;aspect-ratio:1/1;flex:none;max-width:100%;background:#e5f3ef;}

@@ -1,6 +1,6 @@
 /* Tiny offline shell cache. Activated only under HTTPS/localhost. No user data is sent. */
-const CACHE = 'niveshpath-static-v4';
-const SHELL = ['./', './index.html', './styles.css', './app.js', './curriculum.js', './favicon.svg'];
+const CACHE = 'niveshpath-static-v6';
+const SHELL = ['./', './index.html', './styles.css', './app.js', './curriculum.js', './favicon.svg', './jeetaksh.jpg', './sakshi.jpg'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting()));
 });
