@@ -33,3 +33,34 @@ html.big-text{--font-scale:1.16}html.high-contrast{--ink:#09232d;--muted:#3f5660
 @media(max-width:800px){.next-grid{grid-template-columns:1fr}.focus-progress{flex-wrap:wrap}.focus-progress .progress-track{flex-basis:100%;order:2}.focus-progress b{margin-left:auto}.result-summary{grid-template-columns:1fr}.next-main{padding:21px}}@media(max-width:540px){.next-card{padding:17px;gap:12px}.next-card .topic-icon{width:39px;height:39px;font-size:1.3rem}.game-sliders label>div{gap:8px}.game-sliders output{min-width:85px}.action-buttons>*{max-width:100%}.onboarding-card{padding:22px}.chat-form{gap:5px}.chat-form button{padding:9px}.hero-focus{min-height:235px}}
 
 @media(max-width:540px){.hero-focus .hero-art{display:none}}
+
+/* v2.1: equal-sized, centered choice cards on diagnostics, lesson quizzes, and scenarios. */
+.answer-list{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;width:100%}
+.answer-list .answer{position:relative;display:grid;grid-template-columns:minmax(0,1fr);align-items:center;justify-items:center;width:100%;min-width:0;min-height:68px;height:auto;padding:15px 54px;border-radius:14px;text-align:center;line-height:1.5;box-sizing:border-box;white-space:normal}
+.answer-list .answer-prefix{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:29px;height:29px;flex:none;display:grid;place-items:center}
+.answer-list .answer-text,.answer-list .answer>span:last-child:not(.answer-prefix){display:block;flex:none;width:100%;min-width:0;text-align:center;overflow-wrap:anywhere}
+.answer-list .answer:focus-visible{outline:3px solid #087f70;outline-offset:2px}
+/* v2.1: discovery hub; relevance shown first, complete older and newer libraries behind optional reveals. */
+.practice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.practice-card{display:flex;flex-direction:column;gap:10px;padding:21px;min-width:0}
+.practice-card-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.practice-card .topic-icon{flex:none}
+.practice-card h3{font-size:1.06rem;margin:8px 0 0}
+.practice-card p{color:var(--muted);font-size:.86rem;line-height:1.55;margin:0;flex:1}
+.practice-card button{align-self:stretch;margin-top:8px;min-height:45px}
+.practice-reason{background:#f0f9f6;border-radius:10px;border-left:3px solid #18a08a;padding:9px 11px;font-size:.81rem;color:#345c60;line-height:1.5}
+.practice-library{margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}
+.practice-library-actions,.practice-library-footer,.home-actions{display:flex;flex-wrap:wrap;align-items:center;gap:11px}
+.practice-library-footer{justify-content:space-between;margin-top:25px;padding:13px 2px;border-top:1px solid var(--line)}
+.practice-category{margin-top:25px}
+.practice-category h3{margin:0 0 15px;font-size:1.15rem}
+.legacy-progress{margin-top:20px;display:grid;gap:17px}
+.legacy-progress .quest-panel{margin:0}
+@media(max-width:1000px){.practice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.practice-grid{grid-template-columns:1fr}.practice-card{padding:17px}.answer-list .answer{min-height:64px;padding:13px 46px}.answer-list .answer-prefix{left:10px;width:27px;height:27px}.practice-library-actions>*{width:100%}}
+
+/* Allow long desktop menus to scroll instead of hiding the last original feature. */
+.sidebar{overflow-y:auto;overscroll-behavior:contain}
+/* Make every choice in the same question match the tallest choice, including on narrow screens. */
+.answer-list{grid-auto-rows:1fr}
+.answer-list .answer{height:100%}

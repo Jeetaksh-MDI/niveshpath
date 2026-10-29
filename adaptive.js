@@ -110,7 +110,7 @@ function recommendations(s){
 }
 function gamesFor(topic){return Object.keys(games).filter(id=>games[id].skill===topic||games[id].lesson===topic);}
 function relevantScenarios(s){const gs=s.profile?.goals||[]; if(gs.includes('safety')||((s.misconceptions||{}).digital>0)||((s.misconceptions||{}).scams>0))return ['otp','advisor','app','remote','report'];
- if(gs.includes('demat')||gs.includes('rights'))return ['app','kyc','report'];
+ if(gs.includes('demat')||gs.includes('rights'))return ['app','kyc'];
  if(gs.includes('bias')||gs.includes('risk'))return ['advisor','fomo'];
  return [];
 }

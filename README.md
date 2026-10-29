@@ -1,8 +1,21 @@
-# NiveshPath 2.0 · Learn. Decide. Invest Independently.
+# NiveshPath 2.1 · Learn. Decide. Invest Independently.
 
 **Team MDI Innovators · MDI Gurgaon · CDSL Reimagine Ideathon 2027**
 
 NiveshPath is an **independent educational-only prototype**. It is not a CDSL, NSDL or SEBI product and offers no investment advice, securities recommendations, payments, account creation, brokerage integration or financial-data collection.
+
+## v2.1 correction: preserve every existing feature, personalize discovery instead
+
+This revision addresses the user-reported UI and discoverability regression:
+
+- **Answer choices:** All quiz/diagnostic/scenario options use equal-width cards with centered text and a small A/B/C marker anchored on the left. CSS grid equalizes the card heights within each question, even when text wraps on mobile.
+- **Existing experiences restored to navigation:** `Practice & simulations`, `My skills & achievements`, and the existing seven-step `Demat walkthrough` are now directly reachable. None of the original 24 lessons, original 10 fraud simulations, photos, resources, scores, badges or completed-learning records were deleted.
+- **Practice & simulations hub:** At most three activities appear in **Recommended practice for you**. Explicit *Explore all eight learning games* and *Explore all ten original simulations* controls reveal the complete activity library on demand. This preserves all activities without overwhelming the personalized home dashboard.
+- **Original achievements:** `My skills & achievements` again includes lesson counts, safe-decision scores, learning points, recent practice, and a user-controlled reveal for original milestones, badges and capability quests.
+- **Genuine hyperpersonalization stays central:** The home dashboard retains a maximum of three needs-based recommendations. The separate activity hub derives practice suggestions from chosen goals, skill gaps, misconceptions, and prior attempts; existing content is never permanently hidden.
+- **Working on GitHub Pages:** Bumped stylesheet/script version parameters and service-worker cache identifier for a clean upgrade. No account, backend or external AI service added.
+
+**Examples of distinct practice starting points:** a new budget learner sees Savings Challenge; an experienced learner working on behaviour sees Decision Under Pressure; a learner tackling fraud risks sees Spot the Red Flags plus relevant original simulations; a demat learner sees Demat Journey plus KYC/app safety exercises. These are educational examples, not demographic assumptions.
 
 ## What changed from the uploaded working website
 
@@ -17,7 +30,7 @@ The original design, **24 financial-education lessons, 10 fictional safety scena
 | Concept dependency map | Verified acyclic 24-topic DAG, with previously demonstrated skills skipped and cybersecurity emergency override |
 | Transparent recommendation engine | Configurable heuristic ranks demonstrated gap, safety concerns, goal fit, prerequisite readiness and format |
 | Personal learning progression | Correct/incorrect lessons and scenarios recalculate priorities; optional all-topic exploration |
-| Original interactive games | **8** mechanics: savings sliders, inflation inference, instrument matching, safety checklist, fraud-red-flag recognition, ordered demat process, diversification assessment, behavioural decision practice |
+| Additional interactive games | **8 newly added** mechanics: savings sliders, inflation inference, instrument matching, safety checklist, fraud-red-flag recognition, ordered demat process, diversification assessment, behavioural decision practice |
 | Local screenshot checker | Optional file preview, manual obscuring via canvas rectangles, user-led red flag checklist and official reporting links; **not** automated fraud classification |
 | Context-aware guide | Existing offline rule-based FAQ enhanced with goal-aware next-step answers; no generative AI claims |
 | Voice | Browser text-to-speech with adjustable rate and optional browser speech-recognition question entry, with text fallback and compatibility warnings |
@@ -84,3 +97,9 @@ On the first page open **“Preview six distinct learner experiences”** and se
 Peer-reviewed curriculum validation, accessibility user testing, full Hindi/other regional-language translation, AI-generated retrieval-grounded explanations with independent safeguards, fully automated privacy-preserving screenshot interpretation, genuine voice conversations, advanced recommender model training, institutional partnerships, opt-in notifications and PWA offline packs. Any real account integration would require separate consent, legal, regulatory and security review.
 
 **Current limitations:** the FAQ assistant is rule-based, not an AI model; some original advanced lessons and original scenario text remain in English; browser speech/microphone support varies; no real-user study, clinical/psychometric validation, automated app-store checks, or public GitHub Pages smoke test was conducted in this workspace. See `TEST_REPORT.md`.
+
+## v2.1 browser verification
+
+See `TEST_REPORT.md`, `test_evidence/v21_results.json`, and `test_evidence/scenario_v21_results.json`. A responsive 390px diagnostic with aligned options and the expanded 18-activity library are pictured in `screenshots/v21-05-mobile-centered-diagnostic.png` and `screenshots/v21-02-complete-practice-library.png`. These are real headless Chromium screenshots, not mock-ups.
+
+For updating an earlier deployed site, overwrite the changed files in the same repository and hard-refresh if your browser briefly serves old assets. This version uses cache `niveshpath-static-v20261029-3`.
