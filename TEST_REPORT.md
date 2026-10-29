@@ -1,4 +1,13 @@
-# NiveshPath 2.1 · Regression and restoration report
+# NiveshPath 2.2 · Wording audit and regression test
+
+## Current version tests
+
+All **15/15 focused Chromium UI checks passed** via Playwright, rendering the exact site CSS and JavaScript using a local browser document. Included `test_evidence/test_copy_v22.py` and `test_evidence/v22_results.json`. Tested: revised onboarding copy, equal-size centered choices, two accessible expandable categories, all 8 learning games plus all 10 original fraud scenarios, game and scenario scoring, About and progress language, learning guide claims, screenshot checker claims, the personalized dashboard, mobile at 390px, and JavaScript errors. Screenshots: `screenshots/v22-01` through `v22-04`.
+
+**Not completed:** A hosted GitHub Pages visit, service-worker caching test, real-user usability study, full accessibility audit, full Hindi translation, voice recognition across browser vendors, or external resource verification. The browser environment blocked navigation to localhost and file URLs, so real-server deployment remains unverified.
+
+## Historical v2.1 verification (previous release only)
+
 
 ## What was fixed
 

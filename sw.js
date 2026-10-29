@@ -1,5 +1,5 @@
 /* Static shell only. Network-first, offline fallback; never caches user screenshots, files or user-specific API data. */
-const CACHE='niveshpath-static-v20261029-3';
+const CACHE='niveshpath-static-v20261029-4';
 const SHELL=['./','./index.html','./styles.css','./curriculum.js','./adaptive.js','./app.js','./experience.js','./favicon.svg','./jeetaksh.jpg','./sakshi.jpg'];
 self.addEventListener('install', event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()));});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('niveshpath-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});

@@ -88,12 +88,12 @@ function recommendations(s){
    if(!nodes[id]||mastered(s,id)||candidates.some(x=>x.id===id))return;
    const deficit=100-mastery(s,id),safety=hot.includes(id)?1:0,interest=goals[goal]?.targets.includes(id)?1:0;
    const score=deficit*.35 + safety*25 + interest*20 + (emergency||nodes[id].pre.every(pre=>mastered(s,pre))?10:0) + (p.format==='games'&&gamesFor(id).length?10:6);
-   candidates.push({id,kind:'lesson',score,goal,reason:reason||(emergency?'Safety comes first. You missed a protective decision.':nodes[id].why),emergency});
+   candidates.push({id,kind:'lesson',score,goal,reason:reason||(emergency?'A previous answer suggests that this safety skill needs practice.':nodes[id].why),emergency});
  }
- if(urgent)addTopic(urgent,'safety','Safety first: practise the protective skill you missed.',true);
+ if(urgent)addTopic(urgent,'safety','Safety first: revisit a question you missed.',true);
  for(const id of targets){if(mastered(s,id))continue;
    const missing=chain(id).find(dep=>!mastered(s,dep));
-   if(missing)addTopic(missing,selected.find(g=>goals[g].targets.includes(id))||selected[0],missing===id?nodes[id].why:`Before ${id}, this prerequisite builds the understanding you need.`);
+   if(missing)addTopic(missing,selected.find(g=>goals[g].targets.includes(id))||selected[0],missing===id?nodes[id].why:`This basic topic will help you understand your chosen goal.`);
  }
  // A missed objective diagnostic can surface its topic only if aligned with goals, except for safety.
  for(const id of Object.keys(errors)){if(errors[id]>0&&(targets.includes(id)||hot.includes(id))){let first=chain(id).find(dep=>!mastered(s,dep));if(first)addTopic(first,selected.find(g=>goals[g].targets.includes(id))||'unsure',undefined,hot.includes(id));}}
@@ -103,9 +103,9 @@ function recommendations(s){
  const out=[];
  if(lessons[0])out.push(lessons[0]);
  const relevantGame=(s.gameResults||{}),first=lessons[0];
- if(first){const game=gamesFor(first.id).find(g=>!relevantGame[g]); if(game && (mastery(s,first.id)>=50 || (p.format==='games'&&mastery(s,first.id)>=20)))out.push({kind:'game',id:game,topic:first.id,reason:'Apply this precise learning need in a short interactive activity.',score:75});}
+ if(first){const game=gamesFor(first.id).find(g=>!relevantGame[g]); if(game && (mastery(s,first.id)>=50 || (p.format==='games'&&mastery(s,first.id)>=20)))out.push({kind:'game',id:game,topic:first.id,reason:'Practise this topic through a short interactive game.',score:75});}
  for(const x of lessons.slice(1)){if(out.length>=3)break;out.push(x);}
- if(out.length<3){for(const g of Object.keys(games)){if(out.length>=3)break;const cfg=games[g];if(!relevantGame[g]&&mastered(s,cfg.lesson)&&targets.includes(cfg.lesson)&&((s.activity||[]).some(a=>a.kind==='lesson'&&a.id===cfg.lesson)||(errors[cfg.skill]||0)>0)&&!out.some(x=>x.id===g))out.push({kind:'game',id:g,topic:cfg.skill,reason:'Test whether you can apply a recently learned skill.',score:50});}}
+ if(out.length<3){for(const g of Object.keys(games)){if(out.length>=3)break;const cfg=games[g];if(!relevantGame[g]&&mastered(s,cfg.lesson)&&targets.includes(cfg.lesson)&&((s.activity||[]).some(a=>a.kind==='lesson'&&a.id===cfg.lesson)||(errors[cfg.skill]||0)>0)&&!out.some(x=>x.id===g))out.push({kind:'game',id:g,topic:cfg.skill,reason:'Try a short game about a topic you have studied.',score:50});}}
  return out.slice(0,3);
 }
 function gamesFor(topic){return Object.keys(games).filter(id=>games[id].skill===topic||games[id].lesson===topic);}

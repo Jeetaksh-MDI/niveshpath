@@ -1,6 +1,6 @@
-NIVESHPath 2.1 — PRESERVED ORIGINALS, FIXED OPTIONS, RESTORED PRACTICE NAVIGATION
+NIVESHPath 2.2 — CLEARER WORDING, ORIGINAL AND NEW ACTIVITIES PRESERVED
 
-NiveshPath 2.0 GitHub Pages upgrade (29 October 2026)
+NiveshPath 2.2 GitHub Pages upgrade (29 October 2026)
 
 1. Back up your existing repository.
 2. Extract the ZIP and open its niveshpath-main folder.
@@ -11,4 +11,4 @@ NiveshPath 2.0 GitHub Pages upgrade (29 October 2026)
 
 Read README.md for full steps, current features, safety notes and TEST_REPORT.md for actual test scope.
 
-After deployment, choose "Practice & simulations" in the navigation. For the complete older and newer activity library, expand both Explore controls. All 24 lessons remain under "My learning path" > "Explore all 24 topics". Original achievements and the seven-step demat guide are accessible from the sidebar. Browser cache version is v20261029-3.
+After deployment, choose "Games & safety practice" in the navigation. For the complete older and newer activity library, expand the Learning games and Fraud & cybersecurity scenarios cards. All 24 lessons remain under "My learning path" > "Browse all 24 lessons". Original achievements and the seven-step demat guide are accessible from the sidebar. Browser cache version is v20261029-4.

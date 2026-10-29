@@ -64,3 +64,22 @@ html.big-text{--font-scale:1.16}html.high-contrast{--ink:#09232d;--muted:#3f5660
 /* Make every choice in the same question match the tallest choice, including on narrow screens. */
 .answer-list{grid-auto-rows:1fr}
 .answer-list .answer{height:100%}
+
+/* 2.2: clearly labeled expandable activity library */
+.practice-library-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+.practice-expand-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;min-width:0}
+.practice-expand-toggle{width:100%;border:0;background:transparent;padding:20px;display:flex;align-items:center;gap:14px;text-align:left;color:var(--ink);cursor:pointer;font:inherit;min-height:96px}
+.practice-expand-toggle:hover,.practice-expand-toggle:focus-visible{background:#f4faf7}
+.practice-expand-toggle:focus-visible{outline:3px solid #168b78;outline-offset:-3px}
+.practice-expand-icon{font-size:1.45rem;flex:0 0 33px;text-align:center}
+.practice-expand-copy{display:flex;flex:1;min-width:0;flex-direction:column;gap:7px}
+.practice-expand-copy b{font-size:1rem;line-height:1.28}
+.practice-expand-copy>span{font-size:.86rem;color:var(--muted);line-height:1.45}
+.practice-chevron{font-size:1.4rem;line-height:1;color:var(--teal)}
+.practice-expand-content{border-top:1px solid var(--line);padding:16px}
+.practice-expand-content[hidden]{display:none}
+.practice-expand-content .practice-grid{grid-template-columns:1fr;gap:12px}
+.practice-expand-content .practice-card{min-width:0}
+@media(max-width:850px){.practice-library-actions{grid-template-columns:1fr}}
+
+.practice-reason b{display:block;margin-bottom:3px}

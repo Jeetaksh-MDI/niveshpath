@@ -1,17 +1,31 @@
-# NiveshPath 2.1 · Learn. Decide. Invest Independently.
+# NiveshPath 2.2 · Learn. Decide. Invest Independently.
 
 **Team MDI Innovators · MDI Gurgaon · CDSL Reimagine Ideathon 2027**
 
 NiveshPath is an **independent educational-only prototype**. It is not a CDSL, NSDL or SEBI product and offers no investment advice, securities recommendations, payments, account creation, brokerage integration or financial-data collection.
 
-## v2.1 correction: preserve every existing feature, personalize discovery instead
+## What is new in v2.2 · Clearer wording throughout
 
-This revision addresses the user-reported UI and discoverability regression:
+This is a **wording and navigation-clarity update** based on the full v2.1 implementation. No features or personalized selection logic were intentionally removed or altered.
+
+- **Practice library:** Replaced confusing “Complete original + new activity library” and “Explore all…” buttons with two clearly labeled, independently expandable cards: **Learning games (8)** and **Fraud & cybersecurity scenarios (10)**. Each describes what the activity involves, with chevrons and accessible expanded-state attributes.
+- **Personalized guidance:** Uses “suggested” and “recommended”, rather than declaring that a short diagnostic has definitively identified knowledge needs or proficiency.
+- **Onboarding:** Describes the assessment as a short, optional quiz; explains that it is not an exam and answers are stored in the current browser.
+- **Dashboard and learning path:** Simplified jargon about prerequisites, progress and course selection. Makes it clear all 24 lessons and all 18 activities remain available on demand.
+- **Learning guide and screenshot checker:** Clarified that the chatbot uses built-in rules, not a live trained AI model; screenshot checklist does not automatically scan or authenticate images.
+- **Progress and About:** Explains that progress percentages are approximate educational signals, not certifications. About now correctly describes overlapping learner goals and implemented personalization rather than the older exclusive demographic cohorts.
+- **Older chatbot references:** Updated links and directions from outdated “Learning journeys” / “Scam Simulator” labels to the current navigation.
+- **Hindi:** Updated corresponding Hindi interface prompts for the revised labels where available; full original lesson/game translation remains a future-scope task.
+- **Compatibility:** CSS and JavaScript remain static and GitHub Pages-compatible, with cache-busting `v22` and a new service-worker cache key.
+
+### Features preserved from v2.1
+
+The preceding v2.1 update corrected the earlier layout and discoverability regression:
 
 - **Answer choices:** All quiz/diagnostic/scenario options use equal-width cards with centered text and a small A/B/C marker anchored on the left. CSS grid equalizes the card heights within each question, even when text wraps on mobile.
-- **Existing experiences restored to navigation:** `Practice & simulations`, `My skills & achievements`, and the existing seven-step `Demat walkthrough` are now directly reachable. None of the original 24 lessons, original 10 fraud simulations, photos, resources, scores, badges or completed-learning records were deleted.
-- **Practice & simulations hub:** At most three activities appear in **Recommended practice for you**. Explicit *Explore all eight learning games* and *Explore all ten original simulations* controls reveal the complete activity library on demand. This preserves all activities without overwhelming the personalized home dashboard.
-- **Original achievements:** `My skills & achievements` again includes lesson counts, safe-decision scores, learning points, recent practice, and a user-controlled reveal for original milestones, badges and capability quests.
+- **Existing experiences restored to navigation:** `Games & safety practice`, `My progress & badges`, and the existing seven-step `Demat walkthrough` are now directly reachable. None of the original 24 lessons, original 10 fraud simulations, photos, resources, scores, badges or completed-learning records were deleted.
+- **Practice & simulations hub:** At most three activities appear in **Recommended practice for you**. Clearly labeled expandable **Learning games** and **Fraud & cybersecurity scenarios** cards reveal the complete activity library on demand. This preserves all activities without overwhelming the personalized home dashboard.
+- **Original achievements:** `My progress & badges` includes lesson counts, safe-decision scores, learning points, recent practice, and a user-controlled reveal for original milestones, badges and capability quests.
 - **Genuine hyperpersonalization stays central:** The home dashboard retains a maximum of three needs-based recommendations. The separate activity hub derives practice suggestions from chosen goals, skill gaps, misconceptions, and prior attempts; existing content is never permanently hidden.
 - **Working on GitHub Pages:** Bumped stylesheet/script version parameters and service-worker cache identifier for a clean upgrade. No account, backend or external AI service added.
 
@@ -21,7 +35,7 @@ This revision addresses the user-reported UI and discoverability regression:
 
 The original design, **24 financial-education lessons, 10 fictional safety scenarios**, curated official resources, team members/photos, demat awareness checklist and static GitHub Pages architecture are retained. The previous three mutually exclusive learner journeys have been replaced by a problem-first, explainable adaptive experience.
 
-| Component | Implemented in v2.0 |
+| Component | Available in v2.2 |
 |---|---|
 | Overlapping identities | Optional multi-select life context, independent investing experience, multiple simultaneous goals and learning format |
 | Progressive diagnostic | Eight short, objective questions selected by goals; skipping is supported |
@@ -30,7 +44,7 @@ The original design, **24 financial-education lessons, 10 fictional safety scena
 | Concept dependency map | Verified acyclic 24-topic DAG, with previously demonstrated skills skipped and cybersecurity emergency override |
 | Transparent recommendation engine | Configurable heuristic ranks demonstrated gap, safety concerns, goal fit, prerequisite readiness and format |
 | Personal learning progression | Correct/incorrect lessons and scenarios recalculate priorities; optional all-topic exploration |
-| Additional interactive games | **8 newly added** mechanics: savings sliders, inflation inference, instrument matching, safety checklist, fraud-red-flag recognition, ordered demat process, diversification assessment, behavioural decision practice |
+| Additional interactive games | **8 previously added** mechanics: savings sliders, inflation inference, instrument matching, safety checklist, fraud-red-flag recognition, ordered demat process, diversification assessment, behavioural decision practice |
 | Local screenshot checker | Optional file preview, manual obscuring via canvas rectangles, user-led red flag checklist and official reporting links; **not** automated fraud classification |
 | Context-aware guide | Existing offline rule-based FAQ enhanced with goal-aware next-step answers; no generative AI claims |
 | Voice | Browser text-to-speech with adjustable rate and optional browser speech-recognition question entry, with text fallback and compatibility warnings |
@@ -45,7 +59,7 @@ The original design, **24 financial-education lessons, 10 fictional safety scena
 **No build process, paid services, credentials, npm dependency or backend is necessary.** Upload the *contents* of this folder (not the ZIP itself) into the root of the existing repository.
 
 1. Make a backup of the current repository (a branch is recommended).
-2. Extract `NiveshPath_2.0_Deployable.zip` and open its `niveshpath-main` folder.
+2. Extract `NiveshPath_2.2_Clear_Wording.zip` and open its `niveshpath-main` folder.
 3. Copy the existing and new deployment files to the repository **root**, overwriting corresponding files: `index.html`, `app.js`, `curriculum.js`, `adaptive.js`, `experience.js`, `styles.css`, `sw.js`, `favicon.svg`, `jeetaksh.jpg`, `sakshi.jpg`. Keep any other repository content that does not conflict.
 4. Commit and push to the publishing branch, typically `main`.
 5. Open **GitHub → your repository → Settings → Pages**, select **Deploy from a branch**, `main`, `/(root)` and save (or retain your existing working Pages configuration).
@@ -98,8 +112,10 @@ Peer-reviewed curriculum validation, accessibility user testing, full Hindi/othe
 
 **Current limitations:** the FAQ assistant is rule-based, not an AI model; some original advanced lessons and original scenario text remain in English; browser speech/microphone support varies; no real-user study, clinical/psychometric validation, automated app-store checks, or public GitHub Pages smoke test was conducted in this workspace. See `TEST_REPORT.md`.
 
-## v2.1 browser verification
+## v2.2 wording and regression verification
 
-See `TEST_REPORT.md`, `test_evidence/v21_results.json`, and `test_evidence/scenario_v21_results.json`. A responsive 390px diagnostic with aligned options and the expanded 18-activity library are pictured in `screenshots/v21-05-mobile-centered-diagnostic.png` and `screenshots/v21-02-complete-practice-library.png`. These are real headless Chromium screenshots, not mock-ups.
+Run `python test_evidence/test_copy_v22.py` with Python Playwright and local Chromium for the current UI test suite. It passed **15/15 checks** at the time of packaging, covering the two expandable categories, 8 games + 10 scenarios, preserved game and fraud scoring, wording claims, quiz layout, mobile rendering and absence of JavaScript errors. Updated screenshots are under `screenshots/v22-*`.
 
-For updating an earlier deployed site, overwrite the changed files in the same repository and hard-refresh if your browser briefly serves old assets. This version uses cache `niveshpath-static-v20261029-3`.
+Earlier `v21` test records are retained as historical evidence from the prior release. Do not interpret those as a rerun of every older test on v2.2. The additional HTTP-serving test could not be completed inside this environment because browser navigation to localhost and file URLs was restricted; GitHub Pages deployment and caching still need real-host verification.
+
+This version uses cache `niveshpath-static-v20261029-4`. After deploying, hard refresh if the old wording remains visible.
