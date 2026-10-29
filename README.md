@@ -1,73 +1,86 @@
-# NiveshPath · CDSL Reimagine Ideathon | Team MDI Innovators
+# NiveshPath 2.0 · Learn. Decide. Invest Independently.
 
-A deployable, privacy-conscious, **educational-only** static website that teaches finance and cybersecurity through lessons, accessible learning journeys, quizzes and simulated safety decisions. This is an independent team prototype, **not** an official CDSL/SEBI site or an account-opening/trading service.
+**Team MDI Innovators · MDI Gurgaon · CDSL Reimagine Ideathon 2027**
 
-## What is included
+NiveshPath is an **independent educational-only prototype**. It is not a CDSL, NSDL or SEBI product and offers no investment advice, securities recommendations, payments, account creation, brokerage integration or financial-data collection.
 
-- **24 educational modules** (the six original modules expanded + 18 new detailed modules) including saving, budgeting, why people consider investing, inflation, financial instruments, financial planning, CDSL/NSDL, NSE/BSE, account opening, market infrastructure, IPOs, bonds, funds/ETFs, investor rights, nomination and transmission, retirement preparedness, behavioural biases, complaints and cybersecurity.
-- **Three distinct learner pathways**: students, first-time investors and senior citizens see different first lessons, different lesson order and contextual examples. All lessons remain accessible to all groups.
-- **10 fictional fraud and investor-safety simulations** (four originals plus six new cases), with feedback, points and badges.
-- **Gamification**: one-time points for mastering lessons, one-time points for safe simulation decisions, a learning level, quest suggestions, achievement badges, and a guided demat checklist. No monetary prizes or incentives to trade.
-- **A step-by-step, seven-step demat account orientation** referencing the official CDSL Depository Participant search. **The site never requests real documents, credentials or personal financial details.**
-- **Expanded guarded learning assistant** with deterministic educational answers on savings, instruments, demat procedures, fraud, market structure, rights and complaints. **No live LLM/API integration and no investment advice.**
-- **Official resources directory** featuring SEBI, CDSL, CDSL IPF, NISM, NSDL, NSE, BSE, NCFE, SCORES, SMART ODR and the cybercrime portal. Old unfocused CDSL Investor Awareness FAQ link removed.
-- **About page** with Team MDI Innovators, Jeetaksh Gandhi and Sakshi Singh, their supplied photos, and realistic future development roadmap.
-- Hindi navigation and summaries from the previous prototype are preserved. Some **new advanced lesson detail and answer explanations remain in English**; a clear notice is shown in those Hindi lessons. Complete Hindi and regional-language localization is a planned later step, not a functioning feature yet.
-- Responsive layout, larger-font/high-contrast preferences, browser text-to-speech where supported, no analytics, no backend and no account creation.
+## What changed from the uploaded working website
 
-## GitHub Pages deployment
+The original design, **24 financial-education lessons, 10 fictional safety scenarios**, curated official resources, team members/photos, demat awareness checklist and static GitHub Pages architecture are retained. The previous three mutually exclusive learner journeys have been replaced by a problem-first, explainable adaptive experience.
 
-These files are already in a valid GitHub Pages **repository root**. Do not upload a ZIP as a single file to GitHub Pages; upload/commit the **contents** of the folder.
+| Component | Implemented in v2.0 |
+|---|---|
+| Overlapping identities | Optional multi-select life context, independent investing experience, multiple simultaneous goals and learning format |
+| Progressive diagnostic | Eight short, objective questions selected by goals; skipping is supported |
+| Adaptive profile | Scores, repeated misconceptions, goals and completed activities stored locally |
+| Relevance filter | Default dashboard displays **one priority step + up to two relevant activities**, never the full library |
+| Concept dependency map | Verified acyclic 24-topic DAG, with previously demonstrated skills skipped and cybersecurity emergency override |
+| Transparent recommendation engine | Configurable heuristic ranks demonstrated gap, safety concerns, goal fit, prerequisite readiness and format |
+| Personal learning progression | Correct/incorrect lessons and scenarios recalculate priorities; optional all-topic exploration |
+| Original interactive games | **8** mechanics: savings sliders, inflation inference, instrument matching, safety checklist, fraud-red-flag recognition, ordered demat process, diversification assessment, behavioural decision practice |
+| Local screenshot checker | Optional file preview, manual obscuring via canvas rectangles, user-led red flag checklist and official reporting links; **not** automated fraud classification |
+| Context-aware guide | Existing offline rule-based FAQ enhanced with goal-aware next-step answers; no generative AI claims |
+| Voice | Browser text-to-speech with adjustable rate and optional browser speech-recognition question entry, with text fallback and compatibility warnings |
+| Accessibility | English/Hindi interface prompts where translated, high contrast, large type, keyboard controls, reduced-motion support, mobile navigation |
+| Examples | Six fictional learner demonstrations showing different recommended learning paths |
+| Team & sources | Existing Jeetaksh/Sakshi photos, team/About section, citations/official resource directory and disclaimer preserved |
 
-1. Back up your existing GitHub repository or create a branch.
-2. Download the provided ZIP and extract it.
-3. Open the extracted `niveshpath-main` folder. Copy **all** of its files and the `assets/` folder into your existing repo's root, replacing existing versions of `index.html`, `app.js`, `styles.css`, `sw.js` and `README.md`. Keep the new `curriculum.js`, `assets/jeetaksh.jpg`, and `assets/sakshi.jpg`.
-4. Commit and push to your GitHub repository's main branch. No `npm install`, environment variables, build step or backend are necessary.
-5. In GitHub: **Settings → Pages → Build and deployment → Deploy from a branch**, select `main` and `/(root)`.
-6. Open your GitHub Pages URL. If an older version appears, use **Ctrl+Shift+R**, close/reopen the tab or clear the site's cached data. The service worker cache was updated to `niveshpath-static-v3`.
+**Important distinction:** Scores are lightweight prototype signals. A single correct diagnostic/lesson answer is *not* a validated proof of financial or behavioural mastery. A user may override the recommendations and explore all material. No source data is uploaded or analyzed by an external AI model.
 
-For local testing, open `index.html` in a browser. Some browsers restrict service workers under `file://`, which is normal. GitHub Pages uses HTTPS.
+## Run locally / deploy on GitHub Pages
 
-## File guide
+**No build process, paid services, credentials, npm dependency or backend is necessary.** Upload the *contents* of this folder (not the ZIP itself) into the root of the existing repository.
 
-| Path | Purpose |
-| --- | --- |
-| `index.html` | HTML entry, loads the two JavaScript files in order |
-| `styles.css` | Responsive original design plus additional styles |
-| `curriculum.js` | Eighteen comprehensive added learning modules |
-| `app.js` | Existing app plus expanded site content, simulations, rewards, source links and About page |
-| `sw.js` | Service-worker asset caching for HTTPS pages |
-| `assets/jeetaksh.jpg`, `assets/sakshi.jpg` | Team member photos provided for this project |
-| `favicon.svg` | Original logo mark |
+1. Make a backup of the current repository (a branch is recommended).
+2. Extract `NiveshPath_2.0_Deployable.zip` and open its `niveshpath-main` folder.
+3. Copy the existing and new deployment files to the repository **root**, overwriting corresponding files: `index.html`, `app.js`, `curriculum.js`, `adaptive.js`, `experience.js`, `styles.css`, `sw.js`, `favicon.svg`, `jeetaksh.jpg`, `sakshi.jpg`. Keep any other repository content that does not conflict.
+4. Commit and push to the publishing branch, typically `main`.
+5. Open **GitHub → your repository → Settings → Pages**, select **Deploy from a branch**, `main`, `/(root)` and save (or retain your existing working Pages configuration).
+6. Visit the project's actual GitHub Pages URL. If the old site appears, use a hard refresh (Ctrl+Shift+R) or clear the site's old service-worker cache from the browser's site settings. The new service worker has a distinct cache name.
 
-## Working today versus proposed features
+For a simple local server, use `python -m http.server 8000` from the `niveshpath-main` folder, then visit `http://localhost:8000`. Plain `file://` opening can run the UI in some browsers but cannot demonstrate service-worker caching and may restrict storage APIs.
 
-**Working:** local onboarding and learner segmentation, lessons, one-question mastery checks, point and badge progress, fictional simulation choices, dynamic recommendations, informational demat checklist, source navigation, rule-based FAQs and accessibility controls.
+### File map
 
-**Proposed only:** an LLM-based agent, genuine AI/ML adaptive recommendations, automated official-source retrieval, regional-language lessons beyond the current partial Hindi experience, verified partner integrations, real-user validation and impact measurement. The site never claims these are already implemented.
+- `index.html` — HTML entrypoint; loads original curriculum, adaptive engine, original app, and enhancement layer **in that order**.
+- `app.js` — original 24-lesson/10-scenario/official-resource/team app, preserved and lightly link-corrected.
+- `curriculum.js` — the 18 added modules from the original ZIP (6 modules are in `app.js`).
+- `adaptive.js` — isolated, deterministic learner profiling, goal maps, diagnostic bank, topic graph, recommended next steps, game maps and demo profiles.
+- `experience.js` — new onboarding, pages, games, screenshot-checker, assistive speech UI, contextual guide, app integration, state changes and reset support.
+- `styles.css` — original styling plus focused UI enhancements.
+- `sw.js` — static-network-first offline shell cache, scoped to this GitHub Pages path.
+- `jeetaksh.jpg` and `sakshi.jpg` — original team photographs.
+- `screenshots/` — real Chromium-rendered examples produced by the automated visual test harness.
+- `test_evidence/` — automated browser test script, machine-readable test outcomes and fictional test image.
+- `TEST_REPORT.md` — tested vs. untested scope, decision engine explanation, limitations and source checks.
 
-## Security, privacy and scope
+## How relevance works
 
-- Never enter PAN, Aadhaar, OTP, PIN, password, phone number, demat account identifiers or financial account information into NiveshPath.
-- Educational progress is saved to **this browser's localStorage only**. There is no server, tracking service, sign-up or collection of payment details.
-- The chat assistant uses local keyword-based rules and does not send messages to an external AI model. Do not paste personal data into chat.
-- No live trading, investments, payments, stock selection or transaction execution are available.
-- Any examples of investments, prices, returns and messages are educational and fictional.
-- Linked websites are third-party official resources, not endorsements or partnerships. Links were reviewed on **28 October 2026**; external site availability and regulatory instructions may change. Certain sites may block automated clients.
-- Content must be reviewed by subject-matter experts and completed in other languages before a public launch.
+1. A learner may select any subset of goals. Context labels are not treated as an ability score.
+2. A short objective assessment, if taken, sets preliminary topic-level signals and records safety-relevant mistakes.
+3. `adaptive.js` expands relevant target topics to prerequisite chains, **removing mastered steps**. A demonstrated safety-critical mistake can take precedence immediately.
+4. Irrelevant modules are removed **before** sorting. Remaining candidates use illustrative weights: 35% learning deficit, 25% observed safety misconception, 20% selected goal, 10% readiness and 10% preferred format. These are engineering defaults, **not empirically validated psychometric weights**.
+5. The dashboard shows **at most three items**. Games appear only where linked to relevant topics; mastered topics are not endlessly pushed.
+6. A lesson, practice game or safe-decision scenario changes the specific competency, updates mistakes if necessary, and recalculates recommendations.
+7. The complete library remains available only on intentional **Explore all 24 topics** action; reporting/official safety resources are always accessible.
 
-## Official reference destinations
+The graph is checked for cycles during initialization. A direct user request may open any module even if the personalized engine would recommend its prerequisites first.
 
-- [SEBI Investor Education Materials](https://investor.sebi.gov.in/iematerial.html)
-- [NISM Investor Education (Basic)](https://online.nism.ac.in/sdm/investor-education-basic.html)
-- [CDSL](https://www.cdslindia.com/)
-- [CDSL demat-account guide](https://www.cdslindia.com/Investors/open-demat.html)
-- [CDSL Investor Protection Fund](https://www.cdslipf.com/resources.html)
-- [NSDL](https://nsdl.co.in/)
-- [NSE](https://www.nseindia.com/)
-- [BSE](https://www.bseindia.com/)
-- [SEBI SCORES](https://scores.sebi.gov.in/scores-home)
-- [SMART ODR](https://smartodr.in/)
-- [National Cyber Crime Portal](https://cybercrime.gov.in/)
+## Safety, privacy and transparency
 
-**Team MDI Innovators, MDI Gurgaon:** Jeetaksh Gandhi and Sakshi Singh.
+- Only non-sensitive profile preferences, completed lesson IDs, formative scores and practice progress go in this device's `localStorage`. The user can reset it under Accessibility & goals. Using a shared browser is not equivalent to secure individual accounts.
+- Do **not** enter or dictate account identifiers, PAN, Aadhaar, banking details, balances, PINs, OTPs, passwords, contact details or personal identity documents.
+- Screenshot selection is **local-only**: no OCR, automated screenshot classification, external upload or permanent image saving. Redaction is manual visual masking; users should remove private details before selecting the file. Selecting “Clear screenshot”, navigating away or resetting deletes the image reference from the running page.
+- The microphone option may use **browser-vendor speech processing**; support, language availability and data-handling policies depend on the browser. Text chat always remains available.
+- All investment scenarios use fictional examples. Scores and points reinforce safety recognition and learning, **not** profit seeking, trading frequency or investment risk-taking.
+- External reference sites are independent. Links do not imply institutional affiliation. Some official pages are difficult for automated clients to fetch, and should be manually rechecked before public deployment.
+
+## Demonstrate six journeys
+
+On the first page open **“Preview six distinct learner experiences”** and select a fictional example. The starting priorities should include budgeting foundations, behavioural decision-making, fraud recognition, demat education, digital safety basics and uncertainty-driven foundations. They do **not** all display the same 24 modules or every game.
+
+## Future scope — **not implemented**
+
+Peer-reviewed curriculum validation, accessibility user testing, full Hindi/other regional-language translation, AI-generated retrieval-grounded explanations with independent safeguards, fully automated privacy-preserving screenshot interpretation, genuine voice conversations, advanced recommender model training, institutional partnerships, opt-in notifications and PWA offline packs. Any real account integration would require separate consent, legal, regulatory and security review.
+
+**Current limitations:** the FAQ assistant is rule-based, not an AI model; some original advanced lessons and original scenario text remain in English; browser speech/microphone support varies; no real-user study, clinical/psychometric validation, automated app-store checks, or public GitHub Pages smoke test was conducted in this workspace. See `TEST_REPORT.md`.

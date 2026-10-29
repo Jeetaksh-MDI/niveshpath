@@ -1,26 +1,10 @@
-NiveshPath PHOTO FIX (28 October 2026)
+Team photos retained in NiveshPath 2.0
 
-WHY THIS PACKAGE:
-The repository has valid photo files, but the live About page can show broken images
-if old JavaScript is cached or images were placed in a different folder.
+Keep jeetaksh.jpg and sakshi.jpg at the repository ROOT alongside index.html. The original image fallback inside app.js is retained. The service worker caches both images and its new version name evicts previous shell caches.
 
-WHAT CHANGED:
-* app.js refers to ./jeetaksh.jpg and ./sakshi.jpg at repo root.
-* If either root JPG fails, the browser automatically uses an embedded data-image copy.
-* index.html cache-busts app.js and styles.css.
-* sw.js bumps the offline cache version and caches both photos.
+To diagnose missing photos after GitHub Pages deployment:
+1. Open the hosted About NiveshPath page and inspect photos.
+2. Check the image URLs directly at <your-github-pages-url>/jeetaksh.jpg and /sakshi.jpg (if published from a project path, retain that path).
+3. Hard-refresh or clear the site cache; check exact filename capitalization.
 
-GITHUB WEB UPLOAD:
-1. Open the repo's main branch.
-2. Add file > Upload files.
-3. Upload ALL content of this folder into the repository ROOT (not the enclosing folder).
-4. Commit changes. Matching files replace the old versions.
-5. Wait for Pages deployment to show success under Actions.
-6. Open the website in a new InPrivate/Incognito window, then About NiveshPath.
-
-DIRECT IMAGE CHECKS AFTER DEPLOYMENT:
-https://jeetaksh-mdi.github.io/niveshpath/jeetaksh.jpg
-https://jeetaksh-mdi.github.io/niveshpath/sakshi.jpg
-
-If the direct links show photos but About still does not, the old HTML/JS remains cached.
-Use Chrome/Edge DevTools > Application > Storage > Clear site data, then reload.
+The HTML, app.js, styles.css and service worker all changed in this package. Apply the ENTIRE root code, not an isolated image patch.

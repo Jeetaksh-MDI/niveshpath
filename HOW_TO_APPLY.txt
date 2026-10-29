@@ -1,9 +1,10 @@
-NiveshPath quick update
+NiveshPath 2.0 GitHub Pages upgrade (29 October 2026)
 
-1. Extract this ZIP.
-2. In your existing GitHub niveshpath repository, use Add file > Upload files.
-3. Upload app.js, styles.css and sw.js to the repository ROOT (same folder as index.html).
-4. Commit directly to main. GitHub replaces files with identical names.
-5. Wait for the Pages deployment and hard refresh Ctrl+Shift+R.
+1. Back up your existing repository.
+2. Extract the ZIP and open its niveshpath-main folder.
+3. Commit all root deployment files to the repository root, including NEW adaptive.js and experience.js. Keep the existing curriculum.js and two JPG photos as included. Do not upload the ZIP itself as a Pages file.
+4. Confirm that GitHub Pages publishes your main branch / (root).
+5. After deployment, hard-refresh the site; the new service-worker cache is versioned.
+6. Visit About NiveshPath to verify both team photographs. Test onboarding and progress on the hosted URL.
 
-Team images are now embedded inside app.js and do not need any assets folder. Your existing index.html and curriculum.js should remain unchanged.
+Read README.md for full steps, current features, safety notes and TEST_REPORT.md for actual test scope.
